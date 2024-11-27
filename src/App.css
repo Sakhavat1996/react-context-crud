@@ -1,0 +1,136 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  display: flex;
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+html,
+body {
+  height: 100%;
+  background-color: cadetblue;
+  .changeMode {
+    width: 200px;
+  }
+}
+header,
+footer {
+  padding: 10px;
+  border-radius: 10px;
+  h1 {
+    font-size: 36px;
+  }
+  &.dark {
+    background-color: black;
+    color: white;
+  }
+}
+
+main {
+  padding: 15px;
+  width: 100%;
+  .main-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+  form {
+    width: 200px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    input {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid rgb(0, 204, 255);
+      margin-right: 5px;
+    }
+  }
+}
+footer {
+  margin-top: auto;
+}
+@keyframes addedElementAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.item-container {
+  display: grid;
+  gap: 15px;
+  .item {
+    min-width: 300px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation-name: addedElementAnimation;
+    animation-timing-function: linear;
+    animation-duration: 1.5s;
+    p {
+      font-style: italic;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    button {
+      padding: 5px;
+      color: white;
+      width: 40px;
+      &.delete {
+        margin-left: auto;
+        background-color: red;
+      }
+      &.update {
+        background-color: rgb(0, 17, 255);
+      }
+    }
+  }
+}
