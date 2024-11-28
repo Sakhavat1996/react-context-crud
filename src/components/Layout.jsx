@@ -12,7 +12,6 @@ function Layout() {
 
   // Add Item
   const submitHandle = (e) => {
-    console.log('asidabsidubasiud')
     e.preventDefault();
     if (!updated) {
       dispatch({
@@ -23,9 +22,7 @@ function Layout() {
         },
       });
       setText("");
-    } else {
-      return;
-    }
+    } 
   };
 
   // Delete Item
@@ -41,13 +38,12 @@ function Layout() {
   // changeFormToChange
   const changeFormToUpdate = (value, id) => {
     setText(value);
-    setUpdated(!updated);
+    setUpdated(true);
     setId(id);
   };
 
   // Update Item
   const updateItem = (value , id) => {
-    setUpdated(!updated);
     dispatch({
       type: "UPDATE",
       payload: {
@@ -55,6 +51,8 @@ function Layout() {
         value
       },
     });
+    setUpdated(false);
+    setText('')
   };
   return (
     <>
@@ -95,7 +93,10 @@ function Layout() {
             {!updated ? (
               <button type="submit">Add</button>
             ) : (
-              <button type="button" onClick={() => updateItem(text , id)}>
+              <button type="button" onClick={(e) => {
+                e.preventDefault()
+                updateItem(text , id)
+              }}>
                 Update
               </button>
             )}
